@@ -49,3 +49,30 @@ function formatPhoneNumber(phone) {
 for (const user of sampleUsers) {
   console.log(user.phone, "->", formatPhoneNumber(user.phone));
 }
+
+function processRegistration(user) {
+  const errors = [];
+  const phone = formatPhoneNumber(user.phone);
+
+  if (!validateName(user.name)) errors.push("Invalid name");
+  if (!validateUsername(user.username)) errors.push("Invalid username");
+  if (phone === null) errors.push("Invalid phone");
+
+  if (errors.length > 0) {
+    return { success: false, errors: errors };
+  }
+
+  return {
+    success: true,
+    data: {
+      name: user.name,
+      username: user.username,
+      phone: phone,
+      discountApplied: validatePromoCode(user.promoCode)
+    }
+  };
+}
+
+for (const user of sampleUsers) {
+  console.log(user.name, processRegistration(user));
+}

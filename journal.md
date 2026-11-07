@@ -3,3 +3,5 @@ PHASE 1 - For this I've made two functions that use regex to check if a name and
 PHASE 2 - Here ive added two more functions for checking if a phone number hasa 10 digits. Then another for the promo code. i flag is because one short patter accepts all kinds of mix of capitals otherwise would need .toLowerCase which breaks if that is missing or longer if statement with every possible spelling.
 
 PHASE 3 - Made a function that alters valid numbers into the same format. If not valid returns null. .test can tell you whether the string matches but caputuring groups save the pieces of the match and backreferences put them back into a new order and format.
+
+PHASE 4 - I used processRegistration to start with an empty list of errors which checks name, username and phone. Making each regex first made this easy since i knew every function worked. Just had to call them in order instead of writing new or finding bugs.
