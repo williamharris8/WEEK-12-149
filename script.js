@@ -21,3 +21,23 @@ console.log(validateUsername("alex_j"));
 console.log(validateUsername("charlie!brown"));
 console.log(validateUsername("da"));
 console.log(validateUsername("the_riddler_super_fan"));
+
+function validatePhone(phone) {
+  return /^\d{3}[-.]?\d{3}[-.]?\d{4}$/.test(phone);
+}
+
+function validatePromoCode(promo) {
+  if (!promo) return false;
+  return /^summer$/i.test(promo);
+}
+
+console.log(validatePhone("555-234-5678"));
+console.log(validatePhone("555.345.6789"));
+console.log(validatePhone("5554567890"));
+console.log(validatePhone("555-678-901"));
+console.log(validatePromoCode("SUMMER"));
+console.log(validatePromoCode("SuMmEr"));
+console.log(validatePromoCode("SUMMER2026"));
+console.log(validatePromoCode(null));
+console.log(validatePromoCode(""));
+
