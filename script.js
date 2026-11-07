@@ -76,3 +76,16 @@ function processRegistration(user) {
 for (const user of sampleUsers) {
   console.log(user.name, processRegistration(user));
 }
+
+console.log(validateUsername("abc"));
+console.log(validateUsername("abcdefghijkl"));
+console.log(validateUsername("abcdefghijklm"));
+
+const edgeCases = [
+  { name: "Gina Linetti", username: "gina@99", phone: "555-890-1234", promoCode: "Summer" },
+  { name: "Hank Hill", username: "hank_hill", phone: "555 PRO PANE", promoCode: "" }
+];
+
+for (const user of edgeCases) {
+  console.log(user.name, processRegistration(user));
+}
