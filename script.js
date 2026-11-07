@@ -41,3 +41,11 @@ console.log(validatePromoCode("SUMMER2026"));
 console.log(validatePromoCode(null));
 console.log(validatePromoCode(""));
 
+function formatPhoneNumber(phone) {
+  if (!validatePhone(phone)) return null;
+  return phone.replace(/^(\d{3})[-.]?(\d{3})[-.]?(\d{4})$/, "($1) $2-$3");
+}
+
+for (const user of sampleUsers) {
+  console.log(user.phone, "->", formatPhoneNumber(user.phone));
+}
